@@ -47,6 +47,10 @@ resource "azurerm_function_app" "demo_function_app" {
     enabled                     = true
     client_affinity_enabled     = false
 
+    app_settings = {
+        key_valut_name = "${var.prefix}-sample-vault"
+    }
+
     identity = {
         type = "SystemAssigned"
     }
