@@ -1,1 +1,36 @@
 # azure-function-key-vault
+
+This terraform template deploy the Azure resources to illustrate an Azure Function with Managed Service Identity activated, and an Azure Key Vault with an access policy for this Function App.
+
+The template deploys
+* A Resource Group, containing all the resources
+* A Storage Account
+* An App Service Plan
+* A Function App
+* A Key Vault, with an access policy for the Function App (get secret)
+
+# Configuration
+
+Create a Service Principal in the Azure Active Directory, generate a key, and add it the Contributor role on the subscription where resources must be deployed.
+
+Set variables value in the demo.tfvars file
+* _subscription_id_ : Id of the subscription where the resources must be deployed
+* _service_principal_id_ : Id of the Service Principal used for authentication
+* _service_principal_key_ : Key generated for this Service Principal
+* _tenant_id_ : Id of the tenant used for authentication
+* _location_ : Location of the deployed resources
+* _prefix_ : resources name prefix
+
+# Usage
+
+    Terraform init
+Download the AzureRM provider
+
+    Terraform plan -var-file=demo.tfvars
+Create an execution plan. Can be used to see what action Terraform will perform
+
+    Terraform apply -var-file=demo.tfvars
+Deploy resources
+
+    Terraform destroy -var-file=demo.tfvars
+Remove resources 
