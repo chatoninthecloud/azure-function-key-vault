@@ -27,7 +27,7 @@ Set variables value in the demo.tfvars file
 Download the AzureRM provider
 
     Terraform plan -var-file=demo.tfvars
-Create an execution plan. Can be used to see what action Terraform will perform
+Create an execution plan. Can be used to see what actions Terraform will perform
 
     Terraform apply -var-file=demo.tfvars
 Deploy resources
