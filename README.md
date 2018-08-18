@@ -34,3 +34,13 @@ Deploy resources
 
     Terraform destroy -var-file=demo.tfvars
 Remove resources 
+
+# Create an Azure Function
+
+Add an access policy to the key vault created, with right to create secret, for your account.
+Add a secret in the vault.
+
+Create a Function in the Function App created by the template, using Powershell Language.
+Paste the code of the GetSecretFromVault.ps1 file, and replace the secret name variable in the code.
+
+Run the function, and the secret value is displayed in logs (#security #bestpractice)
