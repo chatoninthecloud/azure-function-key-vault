@@ -48,7 +48,7 @@ resource "azurerm_function_app" "demo_function_app" {
     client_affinity_enabled     = false
 
     app_settings = {
-        key_valut_name = "${var.prefix}-sample-vault"
+        key_vault_name = "${var.prefix}-sample-vault"
     }
 
     identity = {
